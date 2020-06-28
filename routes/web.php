@@ -13,12 +13,7 @@
 
 
 Auth::routes();
-	Route::get('/clear', function() {
-		
-		\Illuminate\Support\Facades\Artisan::call('config:clear');
-		
-		return 'Cleared!';
-	});
+
 
 Route::group(['middleware' => ['auth']], function () {
 
