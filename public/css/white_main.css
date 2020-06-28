@@ -155,7 +155,7 @@ body {
     border-radius: 0;
     height: 100%;
     z-index: 1000;
-    width: 7%;
+    width: 15%;
     box-shadow: 1px 1px 5px 1px #e0e0e0;
 }
 
@@ -182,7 +182,7 @@ body {
 }
 
 .navbar-fixed-left .navbar-nav > li:hover, .navbar-fixed-left .navbar-nav > .active > a, .navbar-fixed-left .navbar-nav > li a:hover, .dropdown-menu li:hover, .dropdown-menu li > a:hover, .dropdown-menu li:focus, .dropdown-menu li > a:focus {
-    background-color: #f3f3f3 !important;
+   /* background-color: #f3f3f3 !important;*/
     color: black !important;
     box-shadow: none;
 }
@@ -196,6 +196,7 @@ body {
 
 .navbar.navbar-inverse {
     background-color: #fff;
+    margin-top: 59px;
 }
 
 .navbar-fixed-left .navbar-nav > li > .dropdown-menu p {
@@ -216,15 +217,15 @@ body {
 #sideNavbar .navbar-fixed-left .navbar-nav > li a {
     color: #4f4f4f;
     margin: 5px;
-    text-align: center;
+    
     padding: 12px;
 }
 
 #sideNavbar .navbar .navbar-nav > li > a:not(.btn-just-icon) .fa {
     position: relative;
-    margin-right: 4px;
-    font-size: 23px;
-    top: 5px;
+    margin-right: 10px;
+    /*font-size: 23px;
+    top: 5px;*/
 }
 
 #sideNavbar .navbar .navbar-nav > .dropdown > a, #sideNavbar .navbar .navbar-nav > .dropup > a {
@@ -234,7 +235,7 @@ body {
 
 #sideNavbar .caret {
     position: relative;
-    top: 2px;
+    /*top: 2px;*/
 }
 
 #sideNavbar .navbar-nav {
@@ -251,13 +252,13 @@ body {
 
     .navbar-fixed-left .dropdown .dropdown-menu {
         position: absolute;
-        left: 80px;
-        top: 15px;
+        left: 13px;
+        /*top: 15px;*/
     }
 
     .navbar-fixed-left .dropup .dropdown-menu {
         position: absolute;
-        left: 100px;
+        left: 12px;
     }
 
     .navbar-right {
@@ -470,9 +471,11 @@ body {
 }
 
 .content {
-    position: relative;
-    top: 100px;
+   position: relative;
+    top: 86px;
     float: left;
+    /* width: 1130px; */
+    left:100px;
 }
 
 tr td:last-child {

@@ -4,12 +4,13 @@
             <div class="navbar navbar-inverse navbar-fixed-left">
 
                 <ul class="nav navbar-nav">
-                    <li class="{{ set_active(['/', '/*']) }}"><a href="{{url('/')}}" title=" @lang('navbar.dashboard')"
-                                                                 data-toggle="tooltip"><i
-                                    class="fa fa-tachometer fa fa-2x " aria-hidden="true"></i></a></li>
-                    <li class="dropdown" title=" @lang('navbar.products')" data-toggle="tooltip">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-medkit fa fa-2x">
-                            </i><span class="caret"></span></a>
+                    <!--dashboard-->
+        <li class="{{ set_active(['/', '/*']) }}"><a href="{{url('/')}}" title=" @lang('navbar.dashboard')"><i class="fa fa-tachometer" aria-hidden="true"></i><span>Dashboard</span></a></li>
+                        <!--dashboard-->
+<!--medicine-->
+                    <li class="dropdown" title=" @lang('navbar.products')" style="padding-right:15px;">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-medkit">
+                            </i><span>Medicine</span><span class="caret"></span></a>
                         @if(outStockCount() + expiredCount() !== 0)
                             <div class="col-md-1 col-md-offset-9 col-sm-offset-9" id="notif-circle-product">
                                 <span><p>{{outStockCount() + expiredCount()}}</p></span>
@@ -29,39 +30,69 @@
                             </a></li>
                         </ul>
                     </li>
-                    <li class="{{ set_active(['sales', 'sales/*']) }}"><a href="{{url('/sales/create')}}"
+                    <!--medicine-->
+                    <!--pos-->
+                    <li class="{{ set_active(['sales', 'sales/*']) }}" style="padding-right: 53px;"><a href="{{url('/sales/create')}}"
                                                                           title="@lang('navbar.sell')"
-                                                                          data-toggle="tooltip"><i
-                                    class="fa fa-money fa fa-2x" aria-hidden="true"></i></a></li>
-                    <li class="{{ set_active(['sales', 'sales/*']) }}"><a href="{{url('/sales')}}"
-                                                                          title="@lang('navbar.sales')"
-                                                                          data-toggle="tooltip"><i
-                                    class="fa fa-cart-plus fa fa-2x" aria-hidden="true"></i></a></li>
-                    <li class="{{ set_active(['category', 'category/*']) }}"><a href="{{url('/category')}}"
-                                                                                title="@lang('navbar.category')"
-                                                                                data-toggle="tooltip"><i
-                                    class="fa fa-list fa fa-2x" aria-hidden="true"></i></a></li>
-                    <li class="{{ set_active(['suppliers', 'suppliers/*']) }}"><a href="{{url('/suppliers')}}"
+                                                                          ><i
+                                    class="fa fa-money fa" aria-hidden="true"></i><span>Pos</span></a></li>
+                      <!--pos-->
+                   <!--sales-->
+                    <li class="{{ set_active(['sales', 'sales/*']) }}" style="padding-right: 53px;"><a href="{{url('/sales')}}"
+                                    title="@lang('navbar.sales')"><i
+                                    class="fa fa-cart-plus" aria-hidden="true"></i><span>Sales</span></a></li>
+                    <!--sales-->
+                    <!--categories-->
+                    <li class="{{ set_active(['category', 'category/*']) }}" style="padding-right:13px;"><a href="{{url('/category')}}" title="@lang('navbar.category')" ><i
+                                    class="fa fa-list" aria-hidden="true"></i><span>Categories</span></a></li>
+                    <!--categories-->
+                    <!--supply-->
+                    <li class="{{ set_active(['suppliers', 'suppliers/*']) }}" style="padding-right: 36px;"><a href="{{url('/suppliers')}}"
                                                                                   title="@lang('navbar.provider')"
-                                                                                  data-toggle="tooltip"><i
-                                    class="fa fa-truck fa fa-2x" aria-hidden="true"></i></a></li>
-                    <li class="{{ set_active(['customers', 'customers/*']) }}"><a href="{{url('/customers')}}"
+                                                                                  ><i
+                                    class="fa fa-truck " aria-hidden="true"></i><span>Supplies</span></a></li>
+                    <!--supply-->
+                    <!--customer-->
+                    <li class="{{ set_active(['customers', 'customers/*']) }}" style="padding-right: 31px;"><a href="{{url('/customers')}}"
                                                                                   title="@lang('navbar.customers')"
-                                                                                  data-toggle="tooltip"><i
-                                    class="fa fa-users fa fa-2x" aria-hidden="true"></i></a></li>
-                    <li class="{{ set_active(['analysis', 'analysis/*']) }}"><a href="{{url('/analysis')}}"
+                                                                                  ><i
+                                    class="fa fa-users" aria-hidden="true"></i><span>Customer</span></a></li>
+                    <!--customer-->
+                    <!--analysic-->
+                    <li class="{{ set_active(['analysis', 'analysis/*']) }}" style="padding-right: 42px;"><a href="{{url('/analysis')}}"
                                                                                 title=" @lang('navbar.analysis')"
-                                                                                data-toggle="tooltip"><i
-                                    class="fa fa-line-chart fa-2x" aria-hidden="true"></i></a></li>
-                    <li class="{{ set_active(['users', 'users/*']) }}"><a href="{{url('/users')}}"
+                                                                              ><i
+                                    class="fa fa-line-chart" aria-hidden="true"></i><span>Analysic</span></a></li>
+                    <!--analysic-->
+                    <!--user-->
+                    <li class="{{ set_active(['users', 'users/*']) }}" style="padding-right: 67px;"><a href="{{url('/users')}}"
                                                                           title="@lang('navbar.users')"
-                                                                          data-toggle="tooltip"><i
-                                    class="fa fa-user-md fa-2x" aria-hidden="true"></i></a></li>
+                                                                          ><i
+                                    class="fa fa-user-md" aria-hidden="true"></i><span>User</span></a></li>
+                                    <!--user-->
+                                    <!--medicine-->
+                    <li class="dropdown" title=" @lang('navbar.products')" style="padding-right:15px;">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-money">
+                            </i><span>Money Transection</span><span class="caret"></span></a>
+                        @if(outStockCount() + expiredCount() !== 0)
+                            <div class="col-md-1 col-md-offset-9 col-sm-offset-9" id="notif-circle-product">
+                                <span><p>{{outStockCount() + expiredCount()}}</p></span>
+                            </div>
+                        @endif
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="{{ url('product') }}"><i class="fa fa-pencil" aria-hidden="true"></i>
+                                    <p> Send Money </p></a></li>
+                            <li><a href="{{ url('product') }}"><i class="fa fa-pencil" aria-hidden="true"></i>
+                                    <p>Received Money</p></a></li>
+                        </ul>
+                    </li>
+                    <!--medicine-->
                     <li class="dropdown">
-                    <li class="dropup" title="@lang('navbar.tools')" data-toggle="tooltip">
+                        <!--tools-->
+                    <li class="dropup" title="@lang('navbar.tools')" style="margin-right:58px; ">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i
-                                    class="fa fa-puzzle-piece fa fa-2x">
-                            </i><span class="caret"></span></a>
+                                    class="fa fa-puzzle-piece">
+                            </i><span>Tools</span><span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="{{url('/tools/discount')}}"><i class="fa  fa-sort-amount-desc fa fa-2x"
                                                                         aria-hidden="true"></i>
@@ -74,9 +105,11 @@
                                     <p>  @lang('navbar.dsearch')</p></a></li>
                         </ul>
                     </li>
-                    <li class="dropup" id="settingNav" title="@lang('navbar.setting')" data-toggle="tooltip">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-sliders fa fa-2x">
-                            </i><span class="caret"></span></a>
+                    <--tools-->
+                    <!--setting-->
+                    <li class="dropup" id="settingNav" title="@lang('navbar.setting')"  style="margin-right:58px; ">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-sliders">
+                            </i><span>Setting</span><span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="{{url('/setting/lt')}}"><i class="fa fa-globe fa fa-2x" aria-hidden="true"></i>
                                     <p>  @lang('navbar.lt')</p></a></li>
@@ -91,7 +124,7 @@
                                     <p> @lang('navbar.backup')</p></a></li>
 
                         </ul>
-                    </li>   <!-- end li #settingNav-->
+                    </li> <!--setting-->  <!-- end li #settingNav-->
                 </ul>
             </div> <!-- end div .navbar -->
         </div> <!-- end div #sideNavbar -->
