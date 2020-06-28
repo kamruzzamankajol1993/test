@@ -13,9 +13,9 @@
                     <span class="icon-bar"></span>
                 </button>
                 <!-- Branding Image -->
-                <a href="{{ url('/') }}">
-                    <img src="{{ asset('img/logo.png')}}" width="110">
-                </a>
+{{--                <a href="{{ url('/') }}">--}}
+{{--                    <img src="{{ asset('img/logo.png')}}" width="110">--}}
+{{--                </a>--}}
             </div>
 
             <div class="col-md-4 col-sm-5 col-md-offset-2 col-sm-offset-2 " id="searchBox">

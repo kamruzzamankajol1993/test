@@ -11,9 +11,7 @@
 			<div class="navbar navbar-inverse navbar-fixed-left" style="width: 11%">
 				
 				<ul class="nav navbar-nav">
-					<li class="{{ set_active(['/', '/*']) }}"><a href="{{url('/')}}" title=" @lang('navbar.dashboard')"
-					                                             data-toggle="tooltip"><i
-									class="fa fa-tachometer fa fa-2x " aria-hidden="true"></i></a></li>
+					<li class="{{ set_active(['/', '/*']) }}"><a href="{{url('/')}}" ><img src="{{ asset('img/logo.png')}}" width="110"></a></li>
 					<li class="dropdown" >
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Medicine<i class="fa fa-medkit fa fa-2x">
 							</i><span class="caret"></span></a>
