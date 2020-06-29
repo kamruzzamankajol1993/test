@@ -249,16 +249,12 @@ body {
         padding: 0px 0px 0px 20px;
     }
 
-    .navbar-fixed-left .dropdown .dropdown-menu {
-        position: absolute;
-        left: 80px;
-        top: 15px;
-    }
+    
 
-    .navbar-fixed-left .dropup .dropdown-menu {
-        position: absolute;
-        left: 100px;
-    }
+    /*.navbar-fixed-left .dropup .dropdown-menu {*/
+    /*    position: absolute;*/
+    /*    left: 100px;*/
+    /*}*/
 
     .navbar-right {
         float: right !important;
@@ -303,10 +299,10 @@ body {
         top: 5px;
     }
 
-    .navbar-fixed-left .dropup .dropdown-menu {
-        position: absolute;
-        left: 100px;
-    }
+    /*.navbar-fixed-left .dropup .dropdown-menu {*/
+    /*    position: absolute;*/
+    /*    left: 100px;*/
+    /*}*/
 
     .nav-menu {
         text-align: center;

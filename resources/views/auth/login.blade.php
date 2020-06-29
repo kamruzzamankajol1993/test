@@ -1,11 +1,11 @@
 @include('layouts._head')
-<div class="col-md-12" id="background-login">
-    <img src="{{asset('img/background-login.jpg')}}" alt="background-login" class="img-responsive"
+<div class="col-md-12 " id="background-login" >
+    <img src="{{asset('img/pharmacy_bg.jpg')}}" alt="background-login" class="img-responsive"
          style="    height: 100vh;">
 </div>
 <div class="col-md-4 col-md-offset-4" id="login">
     <div class="panel panel-default">
-        <div class="panel-heading"><img src="{{asset('img/logo.png')}}" alt="logo" width="140"></div>
+        <div class="panel-heading" style="text-align: center"><img src="{{asset('img/pharmacy_logo.png')}}" alt="logo" width="140"></div>
         <div class="panel-body">
             <form class="form-horizontal" role="form" method="POST" action="{{ route('login') }}">
                 {{ csrf_field() }}

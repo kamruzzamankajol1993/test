@@ -1,6 +1,14 @@
 <div id="app">
     <div id="cover"></div> <!-- end div #cover -->
-
+    <style>
+        @media (max-width: 886px) {
+    
+            .logo_mobile{
+                display: inline-block !important;
+            }
+        }
+        
+    </style>
     @if(Auth::user())
         <nav class="navbar navbar-info navbar-static-top navbar-fixed ">
             <div class="navbar-header col-md-offset-1 col-sm-offset-1">
@@ -13,9 +21,9 @@
                     <span class="icon-bar"></span>
                 </button>
                 <!-- Branding Image -->
-{{--                <a href="{{ url('/') }}">--}}
-{{--                    <img src="{{ asset('img/logo.png')}}" width="110">--}}
-{{--                </a>--}}
+                <a href="{{ url('/') }}" class="logo_mobile" style="display: none">
+                    <img src="{{ asset('img/pharmacy_logo.png')}}" width="110">
+                </a>
             </div>
 
             <div class="col-md-4 col-sm-5 col-md-offset-2 col-sm-offset-2 " id="searchBox">
@@ -30,8 +38,7 @@
                 </span>
                     </div>
                 </div>
-                <div class="col-md-10" id="resultSearchBox"
-                ">
+                <div class="col-md-10" id="resultSearchBox">
             </div>
 </div>  <!-- end div #searchDiv -->
 <div class="collapse navbar-collapse" id="app-navbar-collapse">
