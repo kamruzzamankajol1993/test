@@ -54,7 +54,9 @@
 			    background: #b30000;
 		    }
 	    }
-	 
+	   .position{
+		   position: inherit !important;
+	   }
     </style>
 	<div class="container-fluid">
 		<div class="col-md-2 col-sm-2 hidden-xs " id="sideNavbar" style="background-color: #404E67">
@@ -62,7 +64,10 @@
 			
 			<div class="navbar navbar-inverse navbar-fixed-left" style="width: 16%">
 				<div class="logo_wrap">
-					<img src="{{ asset('img/pharmacy_logo.png')}}" width="110">
+					<a href="{{URL::to('/')}}">
+						<img src="{{ asset('img/pharmacy_logo.png')}}" width="110">
+					</a>
+					
 					
 				</div>
 				<ul class="nav navbar-nav custom_bg" style="height: 616px;overflow-y: scroll">
@@ -106,8 +111,7 @@
                             <li><a href=""><i class="fa fa-money fa fa-2x" aria-hidden="true"></i>
                                     <p>  Send Money </p></a>
                             </li>
-                            <li><a href=""><i class="fa fa-credit-card fa fa-2x"
-                                                                            aria-hidden="true"></i>
+                            <li><a href=""><i class="fa fa-credit-card fa fa-2x" aria-hidden="true"></i>
                                     <p> Received Money</p>
                                   </a>
                             </li>
@@ -115,12 +119,13 @@
                             
                         </ul>
                     </li>
-					<li class="{{ set_active(['sales', 'sales/*']) }}">
+					
+					<li class="{{ Request::is('sales/create') ? 'active' : ''}}">
                         <a href="{{url('/sales/create')}}">
 	                        <i class="fa fa-money fa" aria-hidden="true"></i> Sell
                         </a>
                     </li>
-					<li class="{{ set_active(['sales', 'sales/*']) }}"><a href="{{url('/sales')}}"><i class="fa fa-cart-plus" aria-hidden="true"></i>Sales List</a></li>
+					<li class="{{ Request::is('sales') ? 'active' : '' }}"><a href="{{url('/sales')}}"><i class="fa fa-cart-plus" aria-hidden="true"></i>Sales List</a></li>
 					<li class="{{ set_active(['category', 'category/*']) }}">
                         <a href="{{url('/category')}}"><i class="fa fa-list"></i>Category </a>
                     </li>

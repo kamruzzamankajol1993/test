@@ -403,6 +403,10 @@ $(function() {
             }
         });
     });
+    $('.dropdown-toggle').click(function () {
+
+        $('.dropdown-menu').addClass('position');
+    })
 });
 // date function  
 function dateFormat($date) {
