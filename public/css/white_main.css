@@ -217,7 +217,7 @@ body {
     color: #4f4f4f;
     margin: 5px;
     text-align: center;
-    padding: 12px;
+    padding: 8px;
 }
 
 #sideNavbar .navbar .navbar-nav > li > a:not(.btn-just-icon) .fa {
@@ -234,7 +234,7 @@ body {
 
 #sideNavbar .caret {
     position: absolute;
-    top: 19px;
+    top: 17px;
     right: 17px;
 }
 

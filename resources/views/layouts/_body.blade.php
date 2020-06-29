@@ -57,6 +57,9 @@
 	   .position{
 		   position: inherit !important;
 	   }
+	    .custom_p_l{
+		    padding-left: 9px;
+	    }
     </style>
 	<div class="container-fluid">
 		<div class="col-md-2 col-sm-2 hidden-xs " id="sideNavbar" style="background-color: #404E67">
@@ -89,15 +92,15 @@
 							</div>
 						@endif
 						<ul class="dropdown-menu custom_bg" role="menu">
-							<li><a href="{{ url('product') }}"><i class="fa fa-pencil fa fa-2x" aria-hidden="true"></i>
-									<p>  @lang('navbar.manage') </p></a></li>
-							<li><a href="{{ url('/product/outstock') }}"><i class="fa fa-archive fa fa-2x"
+							<li><a href="{{ url('product') }}"><i class="fa fa-pencil fa fa-1x" aria-hidden="true"></i>
+									<span class="custom_p_l"> @lang('navbar.manage')</span></a></li>
+							<li><a href="{{ url('/product/outstock') }}"><i class="fa fa-archive fa fa-1x"
 							                                                aria-hidden="true"></i>
-									<p>  @lang('navbar.outstock')</p>
+									<span class="custom_p_l"> @lang('navbar.outstock')</span>
 									<span id="notif-circle"><p>{{outStockCount()}}</p></span></a></li>
-							<li><a href="{{ url('/product/expired') }}"><i class="fa fa-exclamation-circle fa-2x"
+							<li><a href="{{ url('/product/expired') }}"><i class="fa fa-exclamation-circle fa-1x"
 							                                               aria-hidden="true"></i>
-									<p>  @lang('navbar.outstock')</p><span
+									<span class="custom_p_l"> @lang('navbar.outstock')</span><span
 											id="notif-circle"><p>{{expiredCount()}}</p></span></a></li>
 						
            
@@ -108,11 +111,11 @@
 	                        </i>Transaction<span class="caret"></span></a>
                        
                         <ul class="dropdown-menu custom_bg" role="menu">
-                            <li><a href=""><i class="fa fa-money fa fa-2x" aria-hidden="true"></i>
-                                    <p>  Send Money </p></a>
+                            <li><a href=""><i class="fa fa-money fa fa-1x" aria-hidden="true"></i>
+		                            <span class="custom_p_l">  Send Money</span> </a>
                             </li>
-                            <li><a href=""><i class="fa fa-credit-card fa fa-2x" aria-hidden="true"></i>
-                                    <p> Received Money</p>
+                            <li><a href=""><i class="fa fa-credit-card fa fa-1x" aria-hidden="true"></i>
+		                            <span class="custom_p_l">Received Money</span>
                                   </a>
                             </li>
                            
@@ -139,15 +142,15 @@
 					<li class="dropup" data-toggle="tooltip">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-puzzle-piece"></i>Tools<span class="caret"></span></a>
 						<ul class="dropdown-menu custom_bg" role="menu">
-							<li><a href="{{url('/tools/discount')}}"><i class="fa  fa-sort-amount-desc fa fa-2x"
+							<li><a href="{{url('/tools/discount')}}"><i class="fa  fa-sort-amount-desc fa fa-1x"
 							                                            aria-hidden="true"></i>
-									<p>  @lang('navbar.discount')</p></a></li>
-							<li><a href="{{url('/tools/note')}}"><i class="fa fa-sticky-note-o fa fa-2x"
+									<span class="custom_p_l"> @lang('navbar.discount')</span></a></li>
+							<li><a href="{{url('/tools/note')}}"><i class="fa fa-sticky-note-o fa fa-1x"
 							                                        aria-hidden="true"></i>
-									<p>  @lang('navbar.note')</p></a></li>
-							<li><a href="{{url('/tools/dsearch')}}"><i class="fa fa-search fa fa-2x"
+									<span class="custom_p_l"> @lang('navbar.note')</span></a></li>
+							<li><a href="{{url('/tools/dsearch')}}"><i class="fa fa-search fa fa-1x"
 							                                           aria-hidden="true"></i>
-									<p>  @lang('navbar.dsearch')</p></a></li>
+									<span class="custom_p_l"> @lang('navbar.dsearch')</span></a></li>
 						</ul>
 					</li>
 					<li class="dropup" id="settingNav" data-toggle="tooltip">
@@ -156,16 +159,16 @@
 									class="caret"></span></a>
 						<ul class="dropdown-menu custom_bg" role="menu">
 							<li><a href="{{url('/setting/lt')}}"><i class="fa fa-globe fa fa-2x" aria-hidden="true"></i>
-									<p>  @lang('navbar.lt')</p></a></li>
-							<li><a href="{{url('/setting/printer')}}"><i class="fa fa-info-circle fa fa-2x"
+									<span class="custom_p_l"> @lang('navbar.lt')</span></a></li>
+							<li><a href="{{url('/setting/printer')}}"><i class="fa fa-info-circle fa fa-1x"
 							                                             aria-hidden="true"></i>
-									<p>  @lang('navbar.printer')</p></a></li>
-							<li><a href="{{url('/setting/other')}}"><i class="fa fa-barcode fa fa-2x"
+									<span class="custom_p_l"> @lang('navbar.printer')</span></a></li>
+							<li><a href="{{url('/setting/other')}}"><i class="fa fa-barcode fa fa-1x"
 							                                           aria-hidden="true"></i>
-									<p> @lang('navbar.other')</p></a></li>
-							<li><a href="{{url('/setting/backup')}}"><i class="fa fa-cloud fa fa-2x"
+									<span class="custom_p_l"> @lang('navbar.other')</span></a></li>
+							<li><a href="{{url('/setting/backup')}}"><i class="fa fa-cloud fa fa-1x"
 							                                            aria-hidden="true"></i>
-									<p> @lang('navbar.backup')</p></a></li>
+									<span class="custom_p_l"> @lang('navbar.backup')</span></a></li>
 						
 						</ul>
 					</li>   <!-- end li #settingNav-->
