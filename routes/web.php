@@ -57,6 +57,29 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::resource('suppliers', 'SuppliersController');
 
+    //send money part
+    Route::get('/sendmoney','TransectionController@index')->name('sendmoney');
+     Route::get('/sendmoney/add','TransectionController@create')->name('sendmoney.create');
+     Route::post('/sendmoney/store','TransectionController@store')->name('sendmoney.store');
+     Route::post('/sendmoney/destroy/{id}','TransectionController@destroy')->name('sendmoney.destroy');
+     Route::get('/sendmoney/edit/{id}','TransectionController@edit')->name('sendmoney.edit');
+     Route::post('/sendmoney/update/','TransectionController@update')->name('sendmoney.update');
+     Route::get('/sendmoney/search','TransectionController@search')->name('sendmoney.search');
+    //send money part
+
+    //receive money part
+      Route::get('/receivemoney','TransectionController@indexreceive')->name('receivemoney');
+     Route::get('/receivemoney/add','TransectionController@createreceive')->name('receivemoney.create');
+     Route::post('/receivemoney/store','TransectionController@storereceive')->name('receivemoney.store');
+     Route::post('/receivemoney/destroy/{id}','TransectionController@destroyreceive')->name('receivemoney.destroy');
+       Route::get('/receivemoney/show/{id}','TransectionController@showreceive')->name('receivemoney.show');
+     Route::get('/receivemoney/edit/{id}','TransectionController@editreceive')->name('receivemoney.edit');
+     Route::get('/receivemoney/print/{id}','TransectionController@printreceive')->name('receivemoney.print');
+     //Route::post('/receivemoney/update/','TransectionController@updatereceive')->name('receivemoney.update');
+     Route::put('/receivemoney/update/{id}','TransectionController@updatereceive')->name('receivemoney.update');
+     Route::get('/receivemoney/search','TransectionController@searchreceive')->name('receivemoney.search');
+    //receive money part
+
     // Language
 
     Route::get('language/{locale}', 'LanguageController@index');
