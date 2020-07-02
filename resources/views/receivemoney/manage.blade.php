@@ -46,41 +46,48 @@
 </div>
             <!--form-->
             <hr>
-            @foreach ($details as $prov)
-            @if(Auth::user()->name == $prov->receiver_name)
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                    <div id="provideDiv">
-                        <strong id="info">Receiver Name</strong>
-                        <p>{{$prov->receiver_name}}</p>
-                        <strong id="info">Receiver Number</strong>
-                        <p>{{$prov->receiver_number}}</p>
-                         <strong id="info">Sender Name</strong>
-                        <p>{{$prov->sender_name}}</p>
-                        <strong id="info">Sender Location</strong>
-                        <p>{{$prov->sender_location}}</p>
-                        <strong id="info">Pin Number</strong>
-                        <p>{{$prov->pin}}</p>
-                        <strong id="info">Amount</strong>
-                        <p>{{$prov->receive_amount}}</p>
-                        <strong id="info">Receiver NID Number</strong>
-                        <p>{{$prov->reciver_nidnumber}}</p>
-                       <div class="btnProviderDiv">
-                         <!-- <button  type="button" class="btn btn-danger text-light" onclick="deleteAgent({{ $prov->id }})">delete</button>
-                    <form id="delete-form-{{ $prov->id }}" action="{{ route('sendmoney.destroy',$prov->id) }}" method="POST" style="display: none;">
-                                                    {{ csrf_field() }}
-                                                    
-                                                </form>-->
-                      @if($prov->status == 0)                         
-                    <a href="{{ route('receivemoney.edit',$prov->id) }}" type="button" class="btn btn-info text-light">Get the Money</a>
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <table class="table table-striped">
+                        <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Receiver Name</th>
+      <th scope="col">Receiver Number</th>
+      <th scope="col">Sender Name</th>
+      <th scope="col">Sender Location</th>
+      <th scope="col">Pin Number</th>
+      <th scope="col">Amount</th>
+      <th scope="col">Receiver NID Number</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    @foreach($details as $key=>$prov)
+    @if(Auth::user()->name == $prov->receiver_name)
+    <tr>
+        <th scope="row">{{ $key+1 }}</th>
+        <th>{{$prov->receiver_name}}</th>
+        <th>{{$prov->receiver_number}}</th>
+        <th>{{$prov->sender_name}}</th>
+        <th>{{$prov->sender_location}}</th>
+        <th>{{$prov->pin}}</th>
+        <th>{{$prov->receive_amount}}</th>
+        <th>{{$prov->reciver_nidnumber}}</th>
+        <th> @if($prov->status == 0)                         
+                    <a href="{{route('receivemoney.edit',['id'=>$prov->id])}}" type="button" class="btn btn-info text-light">Get the Money</a>
                    @else
                        <a href="{{route('receivemoney.print',['id'=>$prov->id])}}" type="button" class="btn btn-info text-light">Print Receipt</a>
                        <a href="{{route('receivemoney.show',['id'=>$prov->id])}}" type="button" class="btn btn-success text-light">View NID</a>
-                   @endif
-                        </div>  <!-- end div #btnProviderDiv -->
-                    </div>
-                </div> <!-- end col-md-3 -->
-                @endif
-            @endforeach
+                   @endif</th>
+    </tr>
+    @endif
+    @endforeach
+</tbody>
+                    </table>
+            <div>
+            </div>
+         
 
         </div>  <!-- end div #provideDiv -->
     </div> <!-- end div .panel-body -->

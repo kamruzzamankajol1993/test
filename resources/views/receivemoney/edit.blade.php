@@ -9,33 +9,35 @@
         <div class="panel-body">
                 {{Form::open (['route' => ['receivemoney.update', $detail->id], 'files' => 'true', 'method' => 'PUT', 'class' => 'form-horizontal','enctype' => 'multipart/form-data' ])}}
            {!! Form::token() !!}
-            <div class="col-md-6 col-xs-12">
+            <div class="col-md-6 col-xs-12" style="padding-left: 30px;padding-right: 30px;">
                 <div class="form-group">
-                    {{Form::label('receiver_name','Receiver Name',['class'=>'control-label col-sm-2'])}}
-                    <div class="col-sm-10">
+                    {{Form::label('receiver_name','Receiver Name',['class'=>'control-label'])}}
+                    <div class="">
                         {{Form::text('receiver_name',$detail->receiver_name, ['class'=>'form-control'])}}
                     </div>
                 </div>
-              
+              </div>
+              <div class="col-md-6 col-xs-12" style="padding-left: 30px;padding-right: 30px;">
                 <div class="form-group">
-                    {{Form::label('receiver_number','Receiver Number',['class'=>'control-label col-sm-2'])}}
-                    <div class="col-sm-10">
+                    {{Form::label('receiver_number','Receiver Number',['class'=>'control-label'])}}
+                    <div class="">
                         {{Form::text('receiver_number',null, ['class'=>'form-control'])}}
                     </div>
                 </div>
-
+</div>
+<div class="col-md-6 col-xs-12" style="padding-left: 30px;padding-right: 30px;">
                 <div class="form-group">
-                    {{Form::label('reciver_nidnumber','Receiver Nid Number',['class'=>'control-label col-sm-2'])}}
-                    <div class="col-sm-10">
+                    {{Form::label('reciver_nidnumber','Receiver Nid Number',['class'=>'control-label col'])}}
+                    <div class="">
                         {{Form::text('reciver_nidnumber',null, ['class'=>'form-control'])}}
                     </div>
                 </div>
-            </div>   <!-- end col 6 -->
-            <div class="col-md-6 col-xs-12">
+            </div>
+             <div class="col-md-6 col-xs-12" style="padding-left: 30px;padding-right: 30px;">
            
                 <div class="form-group">
-                    {{Form::label('copy','NiD Copy', ['class' => 'control-label col-sm-2'])}}
-                    <div class="col-sm-10">
+                    {{Form::label('copy','NiD Copy', ['class' => 'control-label'])}}
+                    <div class="">
                         <!-- image-preview-filename input [CUT FROM HERE]-->
                         <div class="input-group image-preview">
                             <input class="form-control image-preview-filename" disabled="disabled" type="text">
@@ -63,11 +65,13 @@
                     </div>
                 </div>
                 <div class="form-group">
-                <div class="col-sm-offset-2 col-sm-10">
+                <div class="">
                     <button type="submit" class="btn btn-info">Get</button>
                 </div>
             </div>
             </div> 
+            </div>   <!-- end col 6 -->
+           
               <!-- end col 6 -->
         {{Form::close()}}   <!-- end form !-->
         </div>   <!-- end div .panel-body-->

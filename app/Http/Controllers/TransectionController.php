@@ -8,18 +8,20 @@ use DB;
 use PDF;
 use App\Sendmoney;
 use App\Receivemoney;
+use App\Location;
 use Illuminate\Support\Facades\Auth;
 class TransectionController extends Controller
 {
 
 	public function index(){
+       
         $details = Auth::user()->sendmoneys()->latest()->paginate(10);
 		return view('sendmoney.manage',['details'=>$details]);
 	}
 
 	public function create(){
-
-		return view('sendmoney.add');
+        $locations = Location::latest()->get();
+		return view('sendmoney.add',['locations'=>$locations]);
 	}
 
 
@@ -45,7 +47,7 @@ class TransectionController extends Controller
         $reg->sender_number = $request->sender_number;
         $reg->sender_location = $request->sender_location;
         $reg->amount = $request->amount;
-        $reg->status = $request->status;
+        $reg->status = "unpaid";
         $reg->reciver_location = $request->reciver_location;
         $reg->reciver_name = $request->reciver_name;
         $reg->date=$newDate;
@@ -112,6 +114,8 @@ class TransectionController extends Controller
         }
 
         $video->save();
+        
+        $sendMoney = DB::table('sendmoneys')->where('reciver_name',$request->receiver_name)->update(['status'=>'paid']);
        
          Toastr::success('Successfull:)','Success');
         return redirect()->route('receivemoney');
@@ -165,6 +169,28 @@ class TransectionController extends Controller
      'details'=>$details,
     
     ]);
+    }
+
+
+    public function storelocation(Request $request){
+
+        $this->validate($request,[
+            'location_name' => 'required',
+     ]);
+
+        $reg = new Location();
+        $reg->location_name= $request->location_name;
+        $reg->save();
+        Toastr::success('Successfully Saved :)' ,'Success');
+        return redirect()->route('sendmoney.create');
+    }
+
+
+     public function destroylocation($id)
+    {
+         Location::find($id)->delete();
+         Toastr::warning('Successfully Deleted :)','Success');
+         return redirect()->back();
     }
     
 }

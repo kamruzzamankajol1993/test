@@ -79,6 +79,10 @@ Route::group(['middleware' => ['auth']], function () {
      Route::put('/receivemoney/update/{id}','TransectionController@updatereceive')->name('receivemoney.update');
      Route::get('/receivemoney/search','TransectionController@searchreceive')->name('receivemoney.search');
     //receive money part
+     //location
+     Route::post('/location/store','TransectionController@storelocation')->name('location.store');
+     Route::get('/location/destroy/{id}','TransectionController@destroylocation')->name('location.destroy');
+     //location
 
     // Language
 
