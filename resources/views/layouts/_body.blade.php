@@ -83,23 +83,7 @@
 						</div>
 					
 					</li>
-					 <li class="dropdown" >
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exchange fa fa-2x">
-	                        </i>Transaction<span class="caret"></span></a>
-                       
-                        <ul class="dropdown-menu custom_bg" role="menu">
-                            <li><a href="{{url('/sendmoney')}}"><i class="fa fa-money fa fa-2x" aria-hidden="true"></i>
-                                    <p>  Send Money </p></a>
-                            </li>
-                            <li><a href="{{url('/receivemoney')}}"><i class="fa fa-credit-card fa fa-2x"
-                                                                            aria-hidden="true"></i>
-                                    <p> Received Money</p>
-                                  </a>
-                            </li>
-                           
-                            
-                        </ul>
-                    </li>
+
 					<li class="dropdown" >
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-medkit fa fa-2x">
 							</i>Medicine<span class="caret"></span></a>
@@ -124,18 +108,20 @@
 						</ul>
 					</li>
 
+
                    
-					<li class="{{ set_active(['sales', 'sales/*']) }}">
+					<li >
+
 
                     <li class="dropdown" >
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exchange fa fa-2x">
 	                        </i>Transaction<span class="caret"></span></a>
                        
                         <ul class="dropdown-menu custom_bg" role="menu">
-                            <li><a href=""><i class="fa fa-money fa fa-1x" aria-hidden="true"></i>
+                            <li><a href="{{url('/sendmoney')}}"><i class="fa fa-money fa fa-1x" aria-hidden="true"></i>
 		                            <span class="custom_p_l">  Send Money</span> </a>
                             </li>
-                            <li><a href=""><i class="fa fa-credit-card fa fa-1x" aria-hidden="true"></i>
+                            <li><a href="{{url('/receivemoney')}}"><i class="fa fa-credit-card fa fa-1x" aria-hidden="true"></i>
 		                            <span class="custom_p_l">Received Money</span>
                                   </a>
                             </li>
@@ -145,6 +131,11 @@
                     </li>
 					
 					<li class="{{ Request::is('sales/create') ? 'active' : ''}}">
+
+
+                   
+					<li class="{{ set_active(['sales', 'sales/*']) }}">
+
 
                         <a href="{{url('/sales/create')}}">
 	                        <i class="fa fa-money fa" aria-hidden="true"></i> Sell
