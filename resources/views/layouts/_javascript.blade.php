@@ -8,8 +8,7 @@
 <script>
     $('textarea#textarea').trumbowyg();
 </script>
-<<<<<<< HEAD
-=======
+
  <script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
         {!! Toastr::message() !!}
            <script>
@@ -22,4 +21,4 @@
         @endforeach
     @endif
 </script>
->>>>>>> e41b0f37c0be35806ea0b770730430518b285bc5
+

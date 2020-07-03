@@ -123,7 +123,7 @@
            
 						</ul>
 					</li>
-<<<<<<< HEAD
+
                     <li class="dropdown" >
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exchange fa fa-2x">
 	                        </i>Transaction<span class="caret"></span></a>
@@ -142,10 +142,10 @@
                     </li>
 					
 					<li class="{{ Request::is('sales/create') ? 'active' : ''}}">
-=======
+
                    
 					<li class="{{ set_active(['sales', 'sales/*']) }}">
->>>>>>> e41b0f37c0be35806ea0b770730430518b285bc5
+
                         <a href="{{url('/sales/create')}}">
 	                        <i class="fa fa-money fa" aria-hidden="true"></i> Sell
                         </a>
