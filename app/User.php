@@ -63,4 +63,14 @@ class User extends Authenticatable
         }
         return false;
     }
+
+    public function sendmoneys()
+    {
+        return $this->hasMany('App\Sendmoney');
+    }
+
+    public function receivemoneys()
+    {
+        return $this->hasMany('App\Receivemoney');
+    }
 }
