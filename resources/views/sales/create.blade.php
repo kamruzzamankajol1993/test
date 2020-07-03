@@ -85,7 +85,7 @@
                         //decrease when add new product to notifcation icon order
                         var $number = $('#notif-circle-order p').text(function (index) {
                             var $increase = $(this).text();
-                            $increase--
+                            $increase--;
                             $(this).text($increase);
                         });
                     }

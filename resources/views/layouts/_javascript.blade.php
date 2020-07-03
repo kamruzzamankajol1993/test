@@ -1,4 +1,4 @@
-</div>
+
 <script src="{{asset('js/material.min.js')}}" type="text/javascript"></script>
 <script src="{{asset('js/material-kit.js')}}" type="text/javascript"></script>
 <script src="{{asset('js/bootstrap-datepicker.js')}}" type="text/javascript"></script>
@@ -8,6 +8,7 @@
 <script>
     $('textarea#textarea').trumbowyg();
 </script>
+
  <script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
         {!! Toastr::message() !!}
            <script>
@@ -20,3 +21,4 @@
         @endforeach
     @endif
 </script>
+
